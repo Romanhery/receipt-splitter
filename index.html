@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Splitter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="github-banner">
+            <i class="fab fa-github"></i> Deployed on GitHub Pages | 
+            <a href="https://github.com/YOUR_USERNAME/receipt-splitter" target="_blank">View Source Code</a>
+        </div>
+        
+        <div class="header">
+            <h1>
+                <i class="fas fa-receipt"></i>
+                Receipt Splitter
+            </h1>
+            <p>Split bills easily with friends!</p>
+        </div>
+
+        <div class="main-content">
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="subtotal">
+                        <i class="fas fa-dollar-sign"></i> Subtotal Amount
+                    </label>
+                    <input type="number" id="subtotal" placeholder="Enter subtotal amount" step="0.01" min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="tip">
+                        <i class="fas fa-percentage"></i> Tip Percentage
+                    </label>
+                    <input type="number" id="tip" placeholder="Enter tip percentage" step="0.1" min="0" max="100" value="18">
+                </div>
+
+                <div class="form-group">
+                    <label for="people">
+                        <i class="fas fa-users"></i> Number of People
+                    </label>
+                    <input type="number" id="people" placeholder="Enter number of people" min="1" max="50" value="2">
+                </div>
+
+                <button class="btn" onclick="calculateSplit()">
+                    <i class="fas fa-calculator"></i> Calculate Split
+                </button>
+            </div>
+
+            <div class="results" id="results">
+                <h3><i class="fas fa-chart-pie"></i> Split Results</h3>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <div class="label">Subtotal</div>
+                        <div class="value" id="result-subtotal">$0.00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Tip Amount</div>
+                        <div class="value" id="result-tip">$0.00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Total with Tip</div>
+                        <div class="value" id="result-total">$0.00</div>
+                    </div>
+                    <div class="result-item">
+                        <div class="label">Per Person</div>
+                        <div class="value" id="result-per-person">$0.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
